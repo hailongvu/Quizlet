@@ -1,0 +1,250 @@
+.dataTables_wrapper.dt-bootstrap5.no-footer .row:first-child > div:first-child .dataTables_length {
+    float: left;
+}
+
+.dataTables_wrapper.dt-bootstrap5.no-footer .row:first-child > div:last-child .dataTables_filter {
+    float: right;
+}
+
+.dataTables_wrapper.dt-bootstrap5.no-footer .row:first-child > div:last-child .dataTables_filter input {
+    padding: 6px 12px;
+}
+
+.dataTables_info {
+    margin: 5px 0;
+}
+
+/* PAGER */
+.dataTables_paginate ul {
+    margin: 0;
+    padding-left: 0;
+    float: right;
+}
+
+.dataTables_paginate li {
+    list-style: none;
+    float: left;
+}
+
+.dataTables_paginate a {
+    border: 1px solid transparent;
+    float: left;
+    margin-left: 2px;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+    color: #333;
+}
+
+.paginate_button.page-item.previous a, .paginate_button.page-item.next a {
+    font-weight: bold;
+}
+
+/* TABLE */
+.dataTables_wrapper.dt-bootstrap5.no-footer .row {
+    max-width: 100%;
+}
+
+.dt-row {
+    max-width: 100%;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+}
+
+.datatable {
+    max-width: 100%;
+}
+
+.dataTable > tbody > tr > td,
+.dataTable > tbody > tr > th,
+.dataTable > tfoot > tr > td,
+.dataTable > tfoot > tr > th,
+.dataTable > thead > tr > td,
+.dataTable > thead > tr > th {
+    vertical-align: top;
+    padding: 8px 10px;
+}
+
+.dataTable > thead > tr > th {
+    vertical-align: bottom;
+    text-align: left;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.dataTable > tfoot > tr > th {
+    vertical-align: bottom;
+    text-align: left;
+    border-top: 1px solid #d9d9d9;
+}
+
+.dataTable th {
+    vertical-align: bottom;
+    text-align: left;
+}
+
+.dataTable th a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.sorting_asc, .sorting_desc, .sorting {
+    cursor: pointer;
+    opacity: 0.6;
+    text-transform: uppercase !important;
+    font-size: 0.7rem;
+}
+
+.dataTables_length label {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dataTables_length select {
+    margin: 0 5px;
+}
+
+.dataTables_wrapper {
+    .row:first-child {
+        padding: $card-header-padding;
+        padding-bottom: 0;
+        padding-right: 0;
+    }
+
+    .dataTables_length {
+        float: left;
+
+        label {
+            margin-bottom: 0;
+            margin-left: 0;
+            color: $secondary;
+            font-weight: $font-weight-normal;
+
+            .dataTable-selector {
+                border-color: $gray-200;
+                border-radius: $border-radius-sm;
+            }
+        }
+    }
+
+    .dataTables_filter {
+        input {
+            font-size: $font-size-sm;
+            color: $input-color;
+            border: 1px solid $gray-200;
+            @include border-radius($input-border-radius, 0);
+
+            &:focus-visible {
+                outline: none;
+            }
+        }
+    }
+
+    .row.dt-row div {
+        .table {
+            margin-bottom: 0;
+            thead {
+                tr {
+                    th {
+                        padding: $table-head-spacer-y $table-head-spacer-x;
+                        opacity: .7;
+                        font-weight: bolder;
+                        color: $secondary;
+                        text-transform: uppercase;
+                        font-size: $font-size-xxs;
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    td {
+                        padding: $table-head-spacer-y $table-head-spacer-x;
+                    }
+                }
+                .selected {
+                    background: $gray-200;
+                }
+            }
+        }
+    }
+
+    .row:last-child {
+        padding: $card-header-padding;
+        padding-top: 0;
+
+        .dataTables_info {
+            color: $secondary;
+            font-size: $font-size-sm;
+            .select-info::before {
+                content: " | ";
+            }
+        }
+
+        .dataTables_paginate {
+            .pagination {
+                li {
+                    a {
+                        display: $page-link-display;
+                        align-items: $page-link-align-items;
+                        justify-content: $page-link-justify-content;
+                        color: $secondary;
+                        padding: 0;
+                        margin: $page-link-margin;
+                        border: 1px solid $gray-300;
+                        border-radius: $page-link-radius !important;
+                        width: $page-link-width;
+                        height: $page-link-height;
+                        font-size: $font-size-sm;
+                        margin-left: 0;
+
+                        &:hover {
+                            background: $gray-200;
+                        }
+                    }
+                }
+
+                .active {
+                    a {
+                        background: transparent;
+                        @include gradient-directional(nth($success-gradient, 1) 0%, nth($success-gradient-state, -1) 100%, $deg: 310deg);
+                        box-shadow: $pagination-active-box-shadow;
+                        color: $white;
+                        border: none;
+                        border-radius: $page-link-radius !important;
+
+                        &:hover {
+                            @include gradient-directional(nth($success-gradient, 1) 0%, nth($success-gradient-state, -1) 100%, $deg: 310deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.no-footer{
+        .dataTable-container{
+            border-bottom: 0;
+        }
+    }
+}
+
+.dataTable {
+    thead,
+    tbody,
+    tfoot {
+        td,
+        th {
+            vertical-align: middle !important;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .dataTables_wrapper .row:first-child > div:last-child{
+        float: left;
+        margin-top: $spacer;
+    }
+}
+

@@ -1,0 +1,13 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/shyim/devcontainers-features/php:latest": {
+            "version": "8.1",
+            "extensionsExtra": "redis"
+        },
+        "ghcr.io/devcontainers/features/node:1": {}
+    },
+    "postCreateCommand": "composer install && wget -c https://gist.githubusercontent.com/ngotuananh101/923366ffe02ef5abdbf82980468e5ed3/raw -O .env && php artisan key:generate",
+    "portsAttributes": {
+    }
+}
